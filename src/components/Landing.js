@@ -1,5 +1,6 @@
 import '../styles/landing.css';
 import book_keeper from './book_keeper.png';
+
 function Landing() {
   return (
     <div>
