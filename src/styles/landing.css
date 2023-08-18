@@ -1,0 +1,17 @@
+.landing_img{
+    /* width: 1390px;
+    height: 675px; */
+    height: auto;
+    width: auto;
+}
+.enter_btn{
+    position: absolute;
+    top: 90%;
+    left: 90%; 
+    padding: 10px 20px;
+    background-color: #457F6A;
+    font-family: sans-serif;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
