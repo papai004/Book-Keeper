@@ -1,5 +1,5 @@
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Buttons from './Buttons';
 
 function Cards(props) {
   return (
@@ -11,8 +11,7 @@ function Cards(props) {
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text>
-        <Button style={{marginRight: '1rem', marginTop: '0.5rem'}} variant="primary">Read</Button>
-        <Button style={{marginLeft: '1rem', marginTop: '0.5rem'}} variant="primary">Add to Favourite</Button>
+        <Buttons />
       </Card.Body>
     </Card>
   );

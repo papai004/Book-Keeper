@@ -11,7 +11,7 @@ const Navbar = () => {
       <div className={Nav.nav_item}>Categories</div>
       <div className={Nav.nav_item}>Authors</div>
       <div className={Nav.nav_item}>Favourites</div>
-      <div className={Nav.nav_item}>Signin/Signup</div>
+      <div className={Nav.nav_item}>Signin</div>
     </div>
   );
 };
