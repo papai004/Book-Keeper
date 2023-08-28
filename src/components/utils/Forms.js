@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 
-function Forms() {
+function Forms(props) {
   const titleInputRef = useRef();
   const imageInputRef = useRef();
   const readingInputRef = useRef();
@@ -26,7 +26,7 @@ function Forms() {
       description: enteredDescription,
     };
 
-    console.log(dummyData);
+    props.onAddFormsContent(dummyData);
   }
   return (
     <Container>
@@ -78,32 +78,3 @@ function Forms() {
 }
 
 export default Forms;
-
-
-  /* <Container>
-<StyledCard>
-  <form className={classes.body} onSubmit={submitHandler}>
-    <div>
-      <label htmlFor="title">Title:</label>
-      <input type="text" id="title" name="title" required ref={ titleInputRef }/>
-    </div>
-    <div>
-      <label htmlFor="imageUrl">Image URL:</label>
-      <input type="url" id="imageUrl" name="imageUrl" required ref={ imageInputRef }/>
-    </div>
-    <div>
-      <label htmlFor="imageUrl">Reading URL:</label>
-      <input type="url" id="imageUrl" name="imageUrl" required ref={ readingInputRef }/>
-    </div>
-    <div>
-      <label htmlFor="description">Description:</label>
-      <textarea id="description" name="description" required ref={ descriptionInputRef }/>
-    </div>
-
-    <Button type="submit" variant="success" className={classes.btn}>
-      Submit form
-    </Button>
-  </form>
-</StyledCard>
-</Container> */
-

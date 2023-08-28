@@ -1,19 +1,32 @@
-import Card from 'react-bootstrap/Card';
-import Buttons from './Buttons';
+import Card from "react-bootstrap/Card";
+import Buttons from "./Buttons";
+import Button from "react-bootstrap/Button";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
-function Cards(props) {
+function Cards({ booksData }) {
+  const btnStyle = {
+    marginLeft: "2.5rem",
+  };
+
   return (
-    <Card>
-      <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/en/d/d5/Books_Books.JPG" />
-      <Card.Body>
-        <Card.Title>{props.text}</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Buttons />
-      </Card.Body>
-    </Card>
+    <div>
+      {booksData.map((item, index) => (
+        <Row>
+          <Col xs>
+          <Card key={index}>
+            <Card.Img variant="top" src={item.image}/>
+            <Card.Body>
+              <Card.Title>{item.title}</Card.Title>
+              <Card.Text>{item.description}</Card.Text>
+              <Button style={btnStyle} variant="info">Read</Button>
+              <Buttons />
+            </Card.Body>
+          </Card>
+          </Col>
+        </Row>
+    ))}
+    </div>
   );
 }
 
