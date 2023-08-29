@@ -4,23 +4,11 @@ import Container from "react-bootstrap/Container";
 import Navbar from './navs/Navbar';
 import Footer from './navs/Footer';
 import '../styles/homepage.css';
-import Forms from './utils/Forms';
 
 
 function Homepage() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedDatas, setLoadedData] = useState([]);
-
-  function addFormHandler(dummyData) {
-    fetch(
-      'https://react-getting-started-a0b71-default-rtdb.asia-southeast1.firebasedatabase.app/datas.json',
-      {
-        method: 'POST',
-        body: JSON.stringify(dummyData),
-        headers: { 'Content-Type': 'application/json'}
-      }
-    );
-  }
 
   useEffect(() => {
     setIsLoading(true);
@@ -54,11 +42,9 @@ function Homepage() {
   return (
     <div className="Home">
       <Navbar />
-
       <Container className="card_body">
-          <Cards id='1' booksData = { loadedDatas } />
+          <Cards booksData = { loadedDatas } />
       </Container>
-      <Forms onAddFormsContent={ addFormHandler }/>
       <Footer />
     </div>
   );
