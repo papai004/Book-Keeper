@@ -19,14 +19,14 @@ function Forms(props) {
     const enteredReading = readingInputRef.current.value;
     const enteredDescription = descriptionInputRef.current.value;
 
-    const dummyData = {
+    const booksData = {
       title: enteredTitle,
       image: enteredImage,
       reading: enteredReading,
       description: enteredDescription,
     };
 
-    props.onAddFormsContent(dummyData);
+    props.onAddFormsContent(booksData);
   }
   return (
     <Container>

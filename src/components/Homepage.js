@@ -4,9 +4,12 @@ import Container from "react-bootstrap/Container";
 import Navbar from './navs/Navbar';
 import Footer from './navs/Footer';
 import '../styles/homepage.css';
+import BooksAPI from './store/BooksAPI';
+
 
 
 function Homepage() {
+
   const [isLoading, setIsLoading] = useState(true);
   const [loadedDatas, setLoadedData] = useState([]);
 
@@ -43,7 +46,8 @@ function Homepage() {
     <div className="Home">
       <Navbar />
       <Container className="card_body">
-          <Cards booksData = { loadedDatas } />
+        <Cards booksData = { loadedDatas } />
+        <BooksAPI />
       </Container>
       <Footer />
     </div>

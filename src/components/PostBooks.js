@@ -3,12 +3,12 @@ import Navbar from './navs/Navbar';
 import Footer from './navs/Footer';
 
 const PostBooks = () => {
-    function addFormHandler(dummyData) {
+    function addFormHandler(myData) {
         fetch(
           'https://react-getting-started-a0b71-default-rtdb.asia-southeast1.firebasedatabase.app/datas.json',
           {
             method: 'POST',
-            body: JSON.stringify(dummyData),
+            body: JSON.stringify(myData),
             headers: { 'Content-Type': 'application/json'}
           }
         );
