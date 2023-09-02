@@ -5,7 +5,7 @@ const Favourite = () => {
     return (
         <div>
             <Navbar />
-            <h1>Welcome to Favourites</h1>
+            <h1>Welcome to My Favourites</h1>
             <Footer />
         </div>
     );
