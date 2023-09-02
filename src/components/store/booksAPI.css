@@ -1,0 +1,23 @@
+.btnStyle {
+    margin-left: 2.5rem;
+  }
+.cardMargin {
+    margin-bottom: 1rem;
+  }
+.pagination {
+    padding: 10px;
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+  }
+  .pagination > span {
+    padding: 15px 20px;
+    border: 1px solid grey;
+    cursor: pointer;
+  }
+  .selected_Page{
+    background-color: rgb(220, 220, 220);
+  }
+  .page_disabled{
+    opacity: 0;
+  }

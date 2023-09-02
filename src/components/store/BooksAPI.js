@@ -7,16 +7,12 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import './booksAPI.css';
 
 function BooksAPI() {
-  const btnStyle = {
-    marginLeft: "2.5rem",
-  };
-  const cardMargin = {
-    marginBottom: "1rem",
-  };
 
   const [isBooks, setIsBooks] = useState([]);
+  const [isPage, setIsPage] = useState(1);
 
   useEffect(() => {
     axios
@@ -27,18 +23,27 @@ function BooksAPI() {
       .catch((err) => console.log(err));
   }, []);
 
+  const selectPageHandler = (selectedPage) => {
+    if(selectedPage>=1 
+      && selectedPage<= isBooks.length/10
+      && selectedPage !== isPage)
+
+    setIsPage(selectedPage);
+  }
+
   const navigate = useNavigate();
 
   return (
+    <div>
     <Row>
-      {isBooks.map((book) => (
-        <Col sm={4} style={cardMargin} key={book.id}>
+      {isBooks.slice(isPage*10-10, isPage*10).map((book) => (
+        <Col sm={4} className="cardMargin "key={book.id}>
           <Card>
             <Card.Img variant="top" src={book.image_url} />
             <Card.Body>
               <Card.Title>{book.title}</Card.Title>
               <Button
-                style={btnStyle}
+                className="btnStyle"
                 variant="info"
                 onClick={() => {
                   const uniqueId = book.id;
@@ -53,6 +58,23 @@ function BooksAPI() {
         </Col>
       ))}
     </Row>
+
+    {
+      isBooks.length > 0 && 
+      <div className="pagination">
+        <span onClick={() => selectPageHandler(isPage -1 )}
+        className={isPage <= 1 ? "page_disabled" : ""}
+        >⏮</span>
+        {[...Array(isBooks.length / 10)].map((_,idx) => {
+            return (<span key={idx} className={isPage === idx+1 ? "selected_Page" : ""}
+              onClick={() => selectPageHandler(idx+1)}>{ idx+1 }</span>)
+          })}
+        <span onClick={() => selectPageHandler(isPage + 1)}
+        className={isPage >= isBooks.length /10 ? "page_disabled" : ""}
+        >⏭</span>
+      </div>
+    }
+  </div>
   );
 }
 export default BooksAPI;
