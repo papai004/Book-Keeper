@@ -4,6 +4,7 @@ import Homepage from './components/Homepage.js';
 import { Routes, Route } from "react-router-dom";
 import PostBooks from './components/PostBooks';
 import Favourites from './components/Favourites';
+import Collection from './components/Collection';
 import BooksDesc from './components/bookDetails/bookDesc';
 
 
@@ -16,6 +17,7 @@ function App() {
         <Route path="/postBooks" element={<PostBooks />}></Route>
         <Route path="/favourites" element={<Favourites />}></Route>
         <Route path="/books/:id" element={<BooksDesc />}></Route>
+        <Route path="/collection" element={<Collection />}></Route>
       </Routes>
     </div>
   );
