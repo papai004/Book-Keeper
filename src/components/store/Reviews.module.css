@@ -1,0 +1,13 @@
+.post_review {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .btn{
+    margin-top: 1rem;
+}
+.heading {
+  text-align: center;
+  color: blue;
+  font-family: 'Times New Roman', Times, serif;
+}

@@ -1,14 +1,15 @@
 import Forms from './utils/Forms';
 import Navbar from './navs/Navbar';
 import Footer from './navs/Footer';
+import { MY_COLLECTIONS_URL } from "./API";
 
 const PostBooks = () => {
-    function addFormHandler(myData) {
+    function addFormHandler(reviewsData) {
         fetch(
-          'https://react-getting-started-a0b71-default-rtdb.asia-southeast1.firebasedatabase.app/datas.json',
+          MY_COLLECTIONS_URL,
           {
             method: 'POST',
-            body: JSON.stringify(myData),
+            body: JSON.stringify(reviewsData),
             headers: { 'Content-Type': 'application/json'}
           }
         );

@@ -4,6 +4,9 @@ import Container from "react-bootstrap/Container";
 import Navbar from './navs/Navbar';
 import Footer from './navs/Footer';
 import { MY_COLLECTIONS_URL } from "./API";
+import Loading from './utils/loading';
+import { useNavigate } from 'react-router-dom';
+import '../styles/collection.css';
 
 
 const Collection = () => {
@@ -36,11 +39,25 @@ const Collection = () => {
         setLoadedData(datas);
       });
     }, []);
+
+    const navigate = useNavigate();
+
+    if(loadedDatas.length === 0){
+      return(
+        <Container>
+          <p className="no_reviews"> No books yet 😭 pls add some... </p>
+          <Loading />
+          <div className="review_btn_div">
+            <button className="review_btn" onClick={() => navigate('/Forms')}>Add Books😊</button>
+          </div>
+        </Container>
+      )
+    }
   
     if(isLoading) {
       return (
         <Container>
-          <p> Loading... </p>
+          <Loading />
         </Container>
       )
     }

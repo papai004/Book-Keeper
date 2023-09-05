@@ -44,15 +44,15 @@ function BooksAPI() {
               <Card.Title>{book.title}</Card.Title>
               <Button
                 className="btnStyle"
-                variant="info"
+                variant="dark"
                 onClick={() => {
                   const uniqueId = book.id;
                   navigate("/books/" + uniqueId);
                 }}
               >
-                Read
+                Details
               </Button>
-              <Buttons />
+              <Buttons/>
             </Card.Body>
           </Card>
         </Col>

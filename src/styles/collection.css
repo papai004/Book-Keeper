@@ -1,0 +1,17 @@
+.no_reviews{
+    text-align: center;
+}
+.review_btn{
+    padding: 7px 15px;
+    background-color: #457F6A;
+    font-family: sans-serif;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 180px;
+}
+.review_btn_div{
+    margin: auto;
+    margin-top: 1rem;
+    width: 180px;
+}
