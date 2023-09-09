@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import React from 'react';
 import Cards from "./utils/Cards";
 import Container from "react-bootstrap/Container";
 import Navbar from './navs/Navbar';
@@ -63,13 +64,13 @@ const Collection = () => {
     }
 
     return(
-        <div>
+        <React.Fragment>
             <Navbar />
             <Container style={ card_body }>
             <Cards booksData = { loadedDatas } />
             </Container>
             <Footer />
-        </div>
+        </React.Fragment>
     )
 }
 export default Collection;

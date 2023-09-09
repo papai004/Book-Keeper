@@ -37,6 +37,7 @@ const Reviews = (props) => {
         ratings: rating.toFixed(1),
         feedback: enteredFeedback,
       };
+      
   
       props.onAddReviewsContent(reviewsData);
     }

@@ -15,3 +15,6 @@
     border: none;
     cursor: pointer;
 }
+.landing_img:hover{
+    transform: none;
+}

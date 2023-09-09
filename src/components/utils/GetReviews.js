@@ -6,6 +6,7 @@ import Container from "react-bootstrap/Container";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './ReviewStyles.css';
 import Loading from './loading';
+import NoData from './noData';
 
 
 const GetReview = () => {
@@ -42,7 +43,7 @@ const GetReview = () => {
     return(
       <Container>
         <p className="no_reviews"> No reviews yet 😭 pls give one... </p>
-        <Loading />
+        <NoData />
         <div className="review_btn_div">
           <button className="review_btn" onClick={() => navigate('/PostReviews')}>Add Review😊</button>
         </div>

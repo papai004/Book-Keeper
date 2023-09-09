@@ -2,12 +2,7 @@ import { LoadingOutlined } from '@ant-design/icons';
 import { Spin } from 'antd';
 
 const loading = (
-  <LoadingOutlined
-    style={{
-      fontSize: 24,
-    }}
-    spin
-  />
+  <LoadingOutlined style={{ fontSize: 24, }} spin />
 );
 const styles = {
   margin: "auto",

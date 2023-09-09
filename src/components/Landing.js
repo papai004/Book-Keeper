@@ -7,10 +7,10 @@ import { useNavigate } from 'react-router-dom';
 function Landing() {
   const navigate = useNavigate();
   return (
-    <div>
+    <React.Fragment>
       <img className='landing_img' src={ book_keeper } alt="Home" />
       <button className="enter_btn" onClick={() => navigate('Homepage')}><bold>ENTER</bold></button>
-    </div>
+    </React.Fragment>
   );
 }
 export default Landing;

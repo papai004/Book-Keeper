@@ -1,9 +1,32 @@
-.btnStyle {
-    margin-left: 2.5rem;
+.details_btn {
+  width: auto;
+  border-radius: 0%;
   }
+.favourites_btn{
+  width: auto;
+  border-radius: 0%;
+}
 .cardMargin {
     margin-bottom: 1rem;
   }
+.books_card_background {
+    background-image: linear-gradient(to bottom right,#FFBAAB,#ABFFFB);
+  }
+.searchBar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0 0 2rem 0;
+  }
+.search_input{
+    height: 35px;
+    outline: none;
+    border-radius: 12px;
+    transition: 0.3s ease-in-out;
+  }
+.search_input:focus {
+    border-color: #007bff;
+}
 .pagination {
     padding: 10px;
     margin: 15px 0;
@@ -18,6 +41,7 @@
   .selected_Page{
     background-color: rgb(220, 220, 220);
   }
+
   .page_disabled{
     opacity: 0;
   }

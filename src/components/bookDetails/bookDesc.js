@@ -1,3 +1,4 @@
+import React from 'react';
 import "../../App.js";
 import axios from "axios";
 import Navbar from "../navs/Navbar";
@@ -26,7 +27,7 @@ const BooksDesc = () => {
   }, [id]);
 
   return (
-    <div>
+    <React.Fragment>
       <Navbar />
       <Container>
         <StyledCard>
@@ -57,7 +58,7 @@ const BooksDesc = () => {
         </StyledCard>
       </Container>
       <Footer />
-    </div>
+    </React.Fragment>
   );
 };
 export default BooksDesc;
