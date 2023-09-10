@@ -1,11 +1,20 @@
-import React from 'react';
-import Foot from './Footer.module.css';
+import React from "react";
+import Foot from "./Footer.module.css";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
-    return (
-       <footer className={Foot.footer}>
-      <p>&copy; 2023 Made With Love by DevConquerors❤😉</p>
-    </footer> 
-    );
+  return (
+    <footer className={Foot.footer}>
+      <p>
+        &copy; 2023 Made With Love ❤😉
+        <span onClick={() =>{window.open('https://www.linkedin.com/in/papai-singha-532034218', '_blank');}}>
+          <FaLinkedin className={Foot.hov} size={22} />
+        </span>
+        <span onClick={() =>{window.open('https://www.instagram.com/papai_004/', '_blank');}}>
+          <FaInstagram className={Foot.hov} size={22} />
+        </span>
+      </p>
+    </footer>
+  );
 };
 export default Footer;

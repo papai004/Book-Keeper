@@ -1,7 +1,7 @@
 import React from 'react';
-import Reviews from './store/Reviews';
-import Navbar from './navs/Navbar';
-import { MY_REVIEWS_URL } from "./API";
+import Reviews from '../store/Reviews';
+import Navbar from '../navs/Navbar';
+import { MY_REVIEWS_URL } from "../API";
 import { useNavigate } from 'react-router-dom';
 
 const PostReviews = () => {

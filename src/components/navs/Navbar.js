@@ -19,6 +19,7 @@ function Navbar() {
           <Link to="/Collection">Our Collection</Link>
           <Link to="/Favourites">Favourites</Link>
           <Link to="/login">Publish</Link>
+          <Link to="/ContactUs">📞</Link>
         </div>
       </div>
       <div className="rightSide">
@@ -26,6 +27,7 @@ function Navbar() {
           <Link to="/Collection">Our Collection</Link>
           <Link to="/Favourites">Favourites</Link>
           <Link to="/login">Publish</Link>
+          <Link to="/ContactUs">📞</Link>
         <button onClick={toggleNavbar}>
           <GiHamburgerMenu />
         </button>

@@ -1,8 +1,8 @@
 import React from 'react';
-import Forms from './utils/Forms';
-import Navbar from './navs/Navbar';
-import Footer from './navs/Footer';
-import { MY_COLLECTIONS_URL } from "./API";
+import Forms from '../utils/Forms';
+import Navbar from '../navs/Navbar';
+import Footer from '../navs/Footer';
+import { MY_COLLECTIONS_URL } from "../API";
 
 const PostBooks = () => {
   
