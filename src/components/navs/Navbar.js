@@ -1,23 +1,37 @@
-import { Link } from 'react-router-dom';
-import Nav from './Navbar.module.css';
-import book_keeper from '../book_keeper.png';
+import React, { useState } from "react";
+import Logo from "../images/book_keeper.png";
+import { Link } from "react-router-dom";
+import { GiHamburgerMenu } from "react-icons/gi";
+import  './Navbar.css';
 
+function Navbar() {
+  const [openLinks, setOpenLinks] = useState(false);
 
-const Navbar = () => {
-
+  const toggleNavbar = () => {
+    setOpenLinks(!openLinks);
+  };
   return (
-
-      <div className={Nav.navbar}>
-        <div className={Nav.nav_item}><img className={Nav.nav_img} src={book_keeper} alt="Home"/></div>
-          <Link className={Nav.nav_item} to="/Homepage">Home</Link>
-          <Link className={Nav.nav_item} to="/Collection">Our Collection</Link>
-          <Link className={Nav.nav_item} to="/Favourites">Favourites</Link>
-          <Link className={Nav.nav_item} to="/login">Publish</Link>
-
-
+    <div className="navbar">
+      <div className="leftSide" id={openLinks ? "open" : "close"}>
+        <img className="nav_img" src={Logo} alt="nav_img"/>
+        <div className="hiddenLinks">
+          <Link to="/Homepage">Home</Link>
+          <Link to="/Collection">Our Collection</Link>
+          <Link to="/Favourites">Favourites</Link>
+          <Link to="/login">Publish</Link>
+        </div>
       </div>
-
+      <div className="rightSide">
+      <Link to="/Homepage">Home</Link>
+          <Link to="/Collection">Our Collection</Link>
+          <Link to="/Favourites">Favourites</Link>
+          <Link to="/login">Publish</Link>
+        <button onClick={toggleNavbar}>
+          <GiHamburgerMenu />
+        </button>
+      </div>
+    </div>
   );
-};
+}
 
 export default Navbar;

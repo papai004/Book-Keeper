@@ -1,15 +1,16 @@
 import React from 'react';
 import '../styles/landing.css';
-import book_keeper from './book_keeper.png';
-import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import Landing_Banner from './images/book_keeper.png';
 
 
 function Landing() {
-  const navigate = useNavigate();
+
+
   return (
     <React.Fragment>
-      <img className='landing_img' src={ book_keeper } alt="Home" />
-      <button className="enter_btn" onClick={() => navigate('Homepage')}>ENTER</button>
+    <div className="home" style={{ backgroundImage: `url(${Landing_Banner})` }}></div>
+    <div className="home_btn"><Link className="home_btn" to="/Homepage"><button> ENTER </button></Link></div>
     </React.Fragment>
   );
 }
