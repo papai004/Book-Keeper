@@ -9,7 +9,7 @@ function Landing() {
   return (
     <React.Fragment>
       <img className='landing_img' src={ book_keeper } alt="Home" />
-      <button className="enter_btn" onClick={() => navigate('Homepage')}><bold>ENTER</bold></button>
+      <button className="enter_btn" onClick={() => navigate('Homepage')}>ENTER</button>
     </React.Fragment>
   );
 }

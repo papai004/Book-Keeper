@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Nav from './Navbar.module.css';
 import book_keeper from '../book_keeper.png';
-import Switch from '../utils/switch';
+
 
 const Navbar = () => {
 
@@ -12,7 +12,9 @@ const Navbar = () => {
           <Link className={Nav.nav_item} to="/Homepage">Home</Link>
           <Link className={Nav.nav_item} to="/Collection">Our Collection</Link>
           <Link className={Nav.nav_item} to="/Favourites">Favourites</Link>
-          <Link className={Nav.nav_item} to="#"><Switch /></Link>
+          <Link className={Nav.nav_item} to="/login">Publish</Link>
+
+
       </div>
 
   );

@@ -33,15 +33,16 @@
     display: flex;
     justify-content: center;
   }
-  .pagination > span {
-    padding: 15px 20px;
+.pagination > span {
+    padding: 10px 15px;
     border: 1px solid grey;
+    border-radius: 4px;
     cursor: pointer;
   }
-  .selected_Page{
+.selected_Page{
     background-color: rgb(220, 220, 220);
   }
 
-  .page_disabled{
+.page_disabled{
     opacity: 0;
   }

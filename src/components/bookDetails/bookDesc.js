@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "../../App.js";
 import axios from "axios";
 import Navbar from "../navs/Navbar";
@@ -31,7 +31,7 @@ const BooksDesc = () => {
       <Navbar />
       <Container>
         <StyledCard>
-          <img src={ isBookDetails.image_url } alt={ isBookDetails.id } />
+          <img src={isBookDetails.image_url} alt={isBookDetails.id} />
           <Accordion defaultActiveKey="#">
             <Accordion.Item eventKey="0">
               <Accordion.Header>Title</Accordion.Header>

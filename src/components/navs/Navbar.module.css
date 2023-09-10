@@ -8,12 +8,12 @@
     padding: 1rem;
     margin-bottom: 2rem;
   } 
-  .nav_item {
+.nav_item {
     cursor: pointer;
     text-decoration: none;
     color: white;
   } 
-  .nav-item:hover {
+.nav-item:hover {
     background-color: #555;
   }
 .nav_img{

@@ -4,11 +4,11 @@
 .cardMargin {
     margin-bottom: "1rem";
   }
- img {
+img {
     width: auto;
     height: 250px;
     transition: all "0.3s" ease;
   }
- img:hover {
+img:hover {
     transform: scale(1.1);
 }
