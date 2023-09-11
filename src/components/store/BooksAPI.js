@@ -13,8 +13,6 @@ import { useFavouriteContext } from './favourites-context';
 
 function BooksAPI({data}) {
 
-  console.log(data);
-
   const [isBooks, setIsBooks] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
 

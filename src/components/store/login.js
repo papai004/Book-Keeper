@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./login.module.css";
-import { userDatas } from "../API";
+import { USER_DATA } from "../API";
 import Navbar from "../navs/Navbar";
 import Footer from "../navs/Footer";
 import { useNavigate } from "react-router-dom";
+
 
 function Login(props) {
   const [formData, setFormData] = useState({
@@ -11,41 +12,76 @@ function Login(props) {
     password: "",
   });
   const [logIn, setLogIn] = useState(false);
+  const [isName, setName] = useState('');
+  const [isPassword, setPassword] = useState('');
+
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch(USER_DATA);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const userId = await response.json();
+
+        const val = [];
+
+        for (const key in userId) {
+          const user = {
+            id: key,
+            ...userId[key],
+          };
+          val.push(user);
+        }
+        // Store the password in a constant
+        const name = val[0].userName;
+        const password = val[0].password;
+
+        // Set the 'password' state to trigger a re-render
+        setName(name);
+        setPassword(password);
+      } catch (error) {
+        console.error('An error occurred:', error);
+      }
+    }
+    fetchData(); // Call the fetchData function
+  }, []);
+
 
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(e);
+
     const { username, password } = formData;
     if (
-      username.trim() === userDatas.userName &&
-      password.trim() === userDatas.password
+      username.trim() === isName &&
+      password.trim() === isPassword
     ) {
       console.log("logged in");
       setLogIn(true);
       props.setData(logIn);
       navigate("/PostBooks");
     } else if (
-      username.trim() !== userDatas.userName &&
-      password.trim() === userDatas.password
+      username.trim() !== isName &&
+      password.trim() === isPassword
     ) {
       console.log("unmatched username");
-      navigate("/login");
       setFormData({ username: "", password: formData.password });
     } else if (
-      username.trim() === userDatas.userName &&
-      password.trim() !== userDatas.password
+      username.trim() === isName &&
+      password.trim() !== isPassword
     ) {
       console.log("unmatched password");
-      navigate("/login");
       setFormData({ username: formData.username, password: "" });
     } else {
       console.log("unmatched username & password", username, password);
-      navigate("/login");
       setFormData({ username: "", password: "" });
     }
   };
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -75,7 +111,7 @@ function Login(props) {
             />
           </div>
           <div className={styles.formGroup}>
-            <label className={styles.lable} htmlFor="password">
+            <label className={styles.label} htmlFor="password">
               Password:
             </label>
             <input
