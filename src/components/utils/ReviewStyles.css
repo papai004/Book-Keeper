@@ -92,3 +92,17 @@
     margin-top: 1rem;
     width: 180px;
 }
+
+@media only screen and (max-width: 571px) {
+    .review-card {
+        width: auto;
+    }
+    .review-content {
+        width: auto;
+    }
+    .btn_prev{
+        margin-right: 1rem;
+        margin-left: 2rem;
+        cursor: pointer;
+    }
+  }

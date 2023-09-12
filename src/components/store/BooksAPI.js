@@ -45,6 +45,16 @@ function BooksAPI({data}) {
   const [searchTerm, setSearchTerm] = useState('');
   const [itemsPerPage] = useState(10);
   const [filteredItems, setFilteredItems] = useState(isBooks);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+  }, []);
 
   useEffect(() => {
     const filtered = isBooks.filter((book) =>
@@ -107,7 +117,8 @@ function BooksAPI({data}) {
         ))}
       </Row>
 
-      {
+      { 
+      windowWidth>600 ?
         <div className="pagination">
             <span onClick={() => selectPageHandler(currentPage -1 )}
             className={currentPage <= 1 ? "page_disabled" : ""}
@@ -122,6 +133,11 @@ function BooksAPI({data}) {
             className={currentPage >= filteredItems.length / itemsPerPage ? "page_disabled" : ""}
             >⏭</span>
         </div>
+        : 
+        <div className='btn_click'>
+          <span className="btn_prev" onClick={() => selectPageHandler(currentPage - 1)}>◀</span>
+          <span className="btn_nxt" onClick={() => selectPageHandler(currentPage + 1)}>▶</span>
+      </div>
       }
   </React.Fragment>
   );

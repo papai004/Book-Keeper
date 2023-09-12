@@ -42,7 +42,16 @@
 .selected_Page{
     background-color: rgb(220, 220, 220);
   }
-
+.btn_click{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 .page_disabled{
     opacity: 0;
   }
+
+@media only screen and (max-width: 571px) {
+  .pagination{
+    width:auto;
+  }
+}

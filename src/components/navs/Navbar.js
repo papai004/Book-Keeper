@@ -23,12 +23,12 @@ function Navbar() {
         </div>
       </div>
       <div className="rightSide">
-      <Link to="/Homepage">Home</Link>
-          <Link to="/Collection">Our Collection</Link>
-          <Link to="/Favourites">Favourites</Link>
-          <Link to="/login">Publish</Link>
-          <Link to="/ContactUs">📞</Link>
-        <button onClick={toggleNavbar}>
+        <Link to="/Homepage">Home</Link>
+        <Link to="/Collection">Our Collection</Link>
+        <Link to="/Favourites">Favourites</Link>
+        <Link to="/login">Publish</Link>
+        <Link to="/ContactUs">📞</Link>
+      <button onClick={toggleNavbar}>
           <GiHamburgerMenu />
         </button>
       </div>
