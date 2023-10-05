@@ -53,7 +53,6 @@ function Login(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e);
 
     const { username, password } = formData;
     if (

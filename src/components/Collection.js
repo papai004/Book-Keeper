@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/collection.css';
 
 
+
 const Collection = () => {
 
     const card_body = {
@@ -46,10 +47,10 @@ const Collection = () => {
     if(loadedDatas.length === 0){
       return(
         <Container>
-          <p className="no_reviews"> No books yet 😭 pls add some... </p>
+          <p className="no_reviews"> No books yet pls add some... </p>
           <Loading />
           <div className="review_btn_div">
-            <button className="review_btn" onClick={() => navigate('/Forms')}>Add Books😊</button>
+            <button className="review_btn" onClick={() => navigate('/login')}>Add Books</button>
           </div>
         </Container>
       )

@@ -16,17 +16,13 @@ function Navbar() {
         <img className="nav_img" src={Logo} alt="nav_img"/>
         <div className="hiddenLinks">
           <Link to="/Homepage">Home</Link>
-          <Link to="/Collection">Our Collection</Link>
           <Link to="/Favourites">Favorites</Link>
-          <Link to="/login">Publish</Link>
           <Link to="/ContactUs">📞</Link>
         </div>
       </div>
       <div className="rightSide">
         <Link to="/Homepage">Home</Link>
-        <Link to="/Collection">Our Collection</Link>
         <Link to="/Favourites">Favorites</Link>
-        <Link to="/login">Publish</Link>
         <Link to="/ContactUs">📞</Link>
       <button onClick={toggleNavbar}>
           <GiHamburgerMenu />

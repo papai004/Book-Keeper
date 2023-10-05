@@ -39,14 +39,14 @@ const GetReview = () => {
   if (loadedReviews.length === 0) {
     return (
       <Container>
-        <p className="no_reviews"> No reviews yet 😭 pls give one... </p>
+        <p className="no_reviews"> No reviews yet pls give one... </p>
         <NoData />
         <div className="review_btn_div">
           <button
             className="review_btn"
             onClick={() => navigate("/PostReviews")}
           >
-            Add Review😊
+            Add Review
           </button>
         </div>
       </Container>
